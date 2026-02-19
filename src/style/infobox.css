@@ -22,6 +22,9 @@
 }
 
 .inner_box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: rgb(255, 255, 255);
     width: calc(190px * var(--boxScale));
     height: calc(220px * var(--boxScale));
