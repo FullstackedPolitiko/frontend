@@ -1,0 +1,70 @@
+:root {
+  --scale: 1; 
+  --boxScale:1;
+}
+
+.box{
+ display: inline-flex;
+ flex-direction: column;
+ align-items: center;
+}
+
+.outer_box{
+    display: flex;
+    background-color: rgb(255, 255, 255);
+    width: calc(220px * var(--boxScale));
+    height: calc(250px * var(--boxScale));
+    border-radius: 15px;
+    align-items: center;
+    justify-content: center;
+    border: calc(2px * var(--boxScale)) solid rgb(207, 197, 197);
+    box-shadow: 5px 5px 8px grey;
+}
+
+.inner_box{
+    background-color: rgb(255, 255, 255);
+    width: calc(190px * var(--boxScale));
+    height: calc(220px * var(--boxScale));
+    border-radius: 15px;
+    border: calc(7px * var(--boxScale)) solid rgb(79, 146, 233);
+}
+
+/* BoxAttach */
+.box_attach {
+  display: flex;  
+  width: calc(180px * var(--scale)); 
+  height: calc(100px * var(--scale)); 
+  background-color: rgb(40, 97, 145);
+}
+
+.left_circle {
+  background-color: rgb(255, 255, 255);
+  width: calc(80px * var(--scale));
+  height: calc(120px * var(--scale));
+  position: relative;
+  border-radius: 50%;
+  margin-right: auto;
+  align-self: center;
+  border-bottom-left-radius: 0%;
+  border-top-left-radius: 0%;
+}
+
+.right_circle {
+  background-color: rgb(255, 255, 255);
+  width: calc(80px * var(--scale));
+  height: calc(120px * var(--scale));
+  position: relative;
+  border-radius: 50%;
+  align-self: center;
+  border-bottom-right-radius: 0%;
+  border-top-right-radius: 0%;
+}
+
+@media screen and (max-width: 600px){
+  :root {
+    --scale: 0.3; 
+    --boxScale:0.5;
+  }
+}
+
+
