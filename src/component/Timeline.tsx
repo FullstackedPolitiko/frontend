@@ -1,13 +1,15 @@
 import YearRow from "./YearRow";
 import "../style/timeline.css"
-import { useState } from "react";
-import { LeftOutlined, RightOutlined } from "@ant-design/icons";
+import { DownOutlined, LeftOutlined, RightOutlined } from "@ant-design/icons";
 import type { Case } from "../model/Case";
+import { useLoadmore } from "../hooks/useLoadMore";
+import usePagination from "../hooks/usePagination";
+
 
 interface props {
     startyear: number;
     endyear: number;
-    cases: Case[]
+    cases: Case[] //TODO make into a map with year as key
 }
 
 function Timeline({ startyear, endyear, cases }: props) {
@@ -16,31 +18,48 @@ function Timeline({ startyear, endyear, cases }: props) {
         years.push(i);
     }
 
-    const [currentIndex, setCurrentIndex] = useState(0);
+    const { visibleCases, handleLoadMore, hasMore } = useLoadmore({
+        cases: cases,
+        initialCount: 2
+    })
 
-    const itemsToShow = 6;
-
-    const visibleYears = years.slice(currentIndex, currentIndex + itemsToShow);
+    const { visibleYears, goForward, goBack } = usePagination({
+        years: years,
+        itemsToShow: 6
+    })
 
     return (
-        <div>
-            <div className="timeline">
-                {visibleYears.map((year) => (
-                    <YearRow key={year} year={year.toString()} cases={cases} />
-                ))}
-            </div>
-
-            <br />
+        <div style={{ display: "flex" }}>
 
             <div>
-                <button onClick={() => setCurrentIndex(currentIndex - itemsToShow)}>
+                <div className="timeline">
+                    {visibleYears.map((year) => (
+                        <YearRow key={year} year={year.toString()} cases={visibleCases} />
+                    ))}
+                </div>
+
+                <br />
+
+                <div>
+                    {hasMore ?
+                        <button className="button" onClick={() => handleLoadMore()}>
+                            <DownOutlined />
+                        </button> : null
+                    }
+                </div>
+            </div>
+
+            <div style={{ display: "flex", width: "fit-content", height: "fit-content", justifyContent: "center" }}>
+                
+                <button className="button" onClick={() => goBack()}>
                     <LeftOutlined />
                 </button>
-                <button onClick={() => setCurrentIndex(currentIndex + itemsToShow)}>
+                <button className="button" onClick={() => goForward()}>
                     <RightOutlined />
                 </button>
             </div>
         </div>
+
     );
 }
 
