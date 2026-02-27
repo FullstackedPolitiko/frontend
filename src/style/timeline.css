@@ -1,34 +1,63 @@
-
-.yearrow{
-  display: flex;  
-  flex-direction: column;
-  align-items: center;
+:root {
+    --yearrowDisplayOrientation: column;
 }
 
-.yearinput-box{
+.yearrow {
+    display: flex;
+    flex-direction: var(--yearrowDisplayOrientation);
+    align-items: center;
+}
+
+.yearinput-box {
+    z-index: 1000;
     display: flex;
     align-items: center;
     justify-content: center;
-    width:100px;
-    height:100px;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
     border: 8px solid rgb(243, 243, 243);
     background-color: rgb(39, 169, 209);
-    box-shadow: 
-    0 7px 7px rgba(0, 0, 0, 0.15),     
-    inset 0 5px 6px rgba(0, 0, 0, 0.25);
+    box-shadow:
+        0 7px 7px rgba(0, 0, 0, 0.15),
+        inset 0 5px 6px rgba(0, 0, 0, 0.25);
 }
 
-.yearinput-text{
+.yearinput-text {
     color: white;
 }
 
-.timeline{
+.timeline {
     display: flex;
-    width: fit-content;
+    flex-direction: row;
     align-self: center;
 }
 
-.button{
+.box-rows {
+    margin-top: -5px;
+}
+
+.button {
     background-color: transparent;
+}
+
+@media screen and (max-width:600px) {
+    .timeline {
+        flex-direction: column;
+        width: max-content;
+    }
+
+    :root {
+        --yearrowDisplayOrientation: row;
+    }
+
+    .box-rows {
+        margin-top: 10px;
+    }
+
+    .yearinput-box{
+        width: 80px;
+        height: 80px;
+    }
+
 }

@@ -1,5 +1,5 @@
 :root {
-  --scale: 1; 
+  --attachscale: 1; 
   --boxScale:1;
 }
 
@@ -9,7 +9,8 @@
  align-items: center;
 }
 
-.outer_box{
+.outer-box{
+    z-index: 1000;
     display: flex;
     background-color: rgb(255, 255, 255);
     width: calc(220px * var(--boxScale));
@@ -21,7 +22,7 @@
     box-shadow: 5px 5px 8px grey;
 }
 
-.inner_box{
+.inner-box{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -33,17 +34,17 @@
 }
 
 /* BoxAttach */
-.box_attach {
+.box-attach {
   display: flex;  
-  width: calc(180px * var(--scale)); 
-  height: calc(100px * var(--scale)); 
-  background-color: rgb(40, 97, 145);
+  width: calc(180px * var(--attachscale)); 
+  height: calc(100px * var(--attachscale)); 
+  background-color: rgb(112, 176, 228);
 }
 
-.left_circle {
+.left-circle {
   background-color: rgb(255, 255, 255);
-  width: calc(80px * var(--scale));
-  height: calc(120px * var(--scale));
+  width: calc(80px * var(--attachscale));
+  height: calc(120px * var(--attachscale));
   position: relative;
   border-radius: 50%;
   margin-right: auto;
@@ -52,10 +53,10 @@
   border-top-left-radius: 0%;
 }
 
-.right_circle {
+.right-circle {
   background-color: rgb(255, 255, 255);
-  width: calc(80px * var(--scale));
-  height: calc(120px * var(--scale));
+  width: calc(80px * var(--attachscale));
+  height: calc(120px * var(--attachscale));
   position: relative;
   border-radius: 50%;
   align-self: center;
@@ -65,8 +66,20 @@
 
 @media screen and (max-width: 600px){
   :root {
-    --scale: 0.3; 
-    --boxScale:0.5;
+    --attachscale: 0.5; 
+    --boxScale:0.8;
+  }
+
+  .inner-box{
+    overflow-y: auto;
+  }
+
+  .box-attach{
+   rotate: 90deg;
+  }
+
+  .box{
+    flex-direction: row;
   }
 }
 

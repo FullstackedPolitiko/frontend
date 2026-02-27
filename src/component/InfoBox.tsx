@@ -8,9 +8,9 @@ interface props {
 
 function BoxAttach() {
     return (
-        <div className="box_attach">
-            <div className="left_circle"></div>
-            <div className="right_circle"></div>
+        <div className="box-attach">
+            <div className="left-circle"></div>
+            <div className="right-circle"></div>
         </div>
     )
 }
@@ -21,8 +21,8 @@ function InfoBox({caseItem}:props) {
     return (
         <div className="box">
             <BoxAttach></BoxAttach>
-            <div className="outer_box">
-                <div className="inner_box">
+            <div className="outer-box">
+                <div className="inner-box">
                     <Space vertical>
                         <Text type="success">{caseItem.casename}</Text>
                         <Text type="success">{caseItem.votes}</Text>

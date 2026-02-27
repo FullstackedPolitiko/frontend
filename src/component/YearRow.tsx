@@ -12,7 +12,7 @@ function YearRow({ year, cases }: Props) {
       <div className="yearinput-box">
         <h2 className="yearinput-text">{year}</h2>
       </div>
-      <div>
+      <div className="box-rows">
         {cases.map((c, index) => (
           <InfoBox key={index} caseItem={c} />
         ))}
