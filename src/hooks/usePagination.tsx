@@ -1,27 +1,25 @@
 import { useState } from "react";
 
 interface props {
-    years: number[]
+    items: number[]
     itemsToShow: number
 }
 
-function usePagination({ years, itemsToShow }: props) {
+function usePagination({ items, itemsToShow }: props) {
     const [currentIndex, setCurrentIndex] = useState(0);
-    const visibleYears = years.slice(currentIndex, currentIndex + itemsToShow);
+    const visibleYears = items.slice(currentIndex, currentIndex + itemsToShow);
 
-    const morePagesFront = currentIndex < years.length-itemsToShow
-    console.log("years size:" , years.length)
-    console.log("current index:",currentIndex)
+    const morePagesFront = currentIndex < items.length-itemsToShow
 
     const morePagesBack = currentIndex > 0
 
-    const goBack = () => {
+    const back = () => {
         if (morePagesBack) {
             setCurrentIndex(currentIndex - itemsToShow)
         }
     }
 
-    const goForward = () => {
+    const next = () => {
         if (morePagesFront) {
             setCurrentIndex(currentIndex + itemsToShow)
         }
@@ -29,8 +27,8 @@ function usePagination({ years, itemsToShow }: props) {
 
     return {
         visibleYears,
-        goForward,
-        goBack,
+        next,
+        back,
         morePagesFront,
         morePagesBack
     }

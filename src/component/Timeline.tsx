@@ -2,14 +2,14 @@ import YearRow from "./YearRow";
 import "../style/timeline.css"
 import { DownOutlined, LeftOutlined, RightOutlined } from "@ant-design/icons";
 import type { Case } from "../model/Case";
-import { useLoadmore } from "../hooks/useLoadMore";
 import usePagination from "../hooks/usePagination";
+import { useLoadmore } from "../hooks/useLoadmore";
 
 
 interface props {
     startyear: number;
     endyear: number;
-    cases: Case[] //TODO make into a map with year as key
+    cases: Case[] //TODO: make into a map with year as key
 }
 
 function Timeline({ startyear, endyear, cases }: props) {
@@ -23,8 +23,8 @@ function Timeline({ startyear, endyear, cases }: props) {
         initialCount: 2
     })
 
-    const { visibleYears, goForward, goBack } = usePagination({
-        years: years,
+    const { visibleYears, next, back } = usePagination({
+        items: years,
         itemsToShow: 6
     })
 
@@ -34,7 +34,7 @@ function Timeline({ startyear, endyear, cases }: props) {
             <div>
                 <div className="timeline">
                     {visibleYears.map((year) => (
-                        <YearRow key={year} year={year.toString()} cases={visibleCases} />
+                        <YearRow key={year} year={year.toString()} cases={visibleCases} /> //TODO: filter for cases mathing year
                     ))}
                 </div>
 
@@ -50,11 +50,10 @@ function Timeline({ startyear, endyear, cases }: props) {
             </div>
 
             <div style={{ display: "flex", width: "fit-content", height: "fit-content", justifyContent: "center" }}>
-                
-                <button className="button" onClick={() => goBack()}>
+                <button className="button" onClick={back}>
                     <LeftOutlined />
                 </button>
-                <button className="button" onClick={() => goForward()}>
+                <button className="button" onClick={next}>
                     <RightOutlined />
                 </button>
             </div>
