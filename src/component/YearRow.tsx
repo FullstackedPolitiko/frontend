@@ -1,6 +1,11 @@
 import type { Case } from "../model/Case";
 import InfoBox from "./InfoBox";
 
+{/* ---------------------------------------------------------------------
+    Component: YearRow
+    Purpose: To display cases from a year.
+    --------------------------------------------------------------------- */}
+
 interface Props {
   year: string;
   cases: Case[];

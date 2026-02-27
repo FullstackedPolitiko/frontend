@@ -2,6 +2,11 @@ import type { Case } from "../model/Case";
 import "../style/infobox.css"
 import { Space, Typography } from 'antd';
 
+{/* ---------------------------------------------------------------------
+    Component: InfoBox
+    Purpose: Takes info about a case and displays it
+    --------------------------------------------------------------------- */}
+
 interface props {
     caseItem:Case
 }

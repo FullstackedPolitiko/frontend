@@ -67,7 +67,7 @@
 @media screen and (max-width: 600px){
   :root {
     --attachscale: 0.5; 
-    --boxScale:0.8;
+    --boxScale:0.9;
   }
 
   .inner-box{

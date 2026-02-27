@@ -5,6 +5,10 @@ import type { Case } from "../model/Case";
 import usePagination from "../hooks/usePagination";
 import { useLoadmore } from "../hooks/useLoadmore";
 
+{/* ---------------------------------------------------------------------
+    Component: Timeline
+    Purpose: It displays the given objekt of cases on a timeline that goes from the given start-year to end-year
+    --------------------------------------------------------------------- */}
 
 interface props {
     startyear: number;
