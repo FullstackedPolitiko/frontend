@@ -62,7 +62,6 @@ function Timeline({ startyear, endyear, cases }: props) {
                 </button>
             </div>
         </div>
-
     );
 }
 
