@@ -11,4 +11,5 @@ export default defineConfig({
     setupFiles: "./src/test/setup.ts",
     css: true,
   },
+  base: process.env.GITHUB_PAGES === "true" ? "/frontend/" : "/"
 })
