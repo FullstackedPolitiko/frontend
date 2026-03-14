@@ -1,34 +1,47 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import Timeline from './component/Timeline'
+import type { Case } from './model/Case';
 
 function App() {
-  const [count, setCount] = useState(0)
 
+const mockCases: Case[] = [
+  {
+    id: 1,
+    year: 2021,
+    casename: "Forslag om ny cykelsti i centrum",
+    link: "https://eksempel.dk/sag/1",
+    votes: "For: 12, Imod: 3, Blanke: 0",
+    attendance: "95%"
+  },
+  {
+    id: 2,
+    year: 2021,
+    casename: "Renovering af byparken",
+    link: "https://eksempel.dk/sag/2",
+    votes: "For: 15, Imod: 0, Blanke: 0",
+    attendance: "100%"
+  },
+  {
+    id: "sag-3", 
+    year: 2022,
+    casename: "Godkendelse af kommunebudget",
+    link: "https://eksempel.dk/sag/3",
+    votes: "For: 9, Imod: 6, Blanke: 0",
+    attendance: "100%"
+  },
+  {
+    id: 4,
+    year: 2023,
+    casename: "Udvidelse af skoledistrikt Nord",
+    link: "https://eksempel.dk/sag/4",
+    votes: "For: 14, Imod: 1, Blanke: 0",
+    attendance: "85%"
+  }
+];
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div>
+      <Timeline startyear={1998} endyear={2026} cases={mockCases}></Timeline>
+    </div>
   )
 }
 
