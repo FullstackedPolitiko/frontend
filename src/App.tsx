@@ -8,7 +8,7 @@ const mockCases: Case[] = [
   {
     id: 1,
     year: 2021,
-    casename: "Forslag om ny cykelsti i centrum",
+    casename: "Forslag 12345",
     link: "https://eksempel.dk/sag/1",
     votes: "For: 12, Imod: 3, Blanke: 0",
     attendance: "95%"
@@ -16,7 +16,7 @@ const mockCases: Case[] = [
   {
     id: 2,
     year: 2021,
-    casename: "Renovering af byparken",
+    casename: "2Renovering af byparken",
     link: "https://eksempel.dk/sag/2",
     votes: "For: 15, Imod: 0, Blanke: 0",
     attendance: "100%"
@@ -24,7 +24,7 @@ const mockCases: Case[] = [
   {
     id: "sag-3", 
     year: 2022,
-    casename: "Godkendelse af kommunebudget",
+    casename: "3Godkendelse af kommunebudget",
     link: "https://eksempel.dk/sag/3",
     votes: "For: 9, Imod: 6, Blanke: 0",
     attendance: "100%"
@@ -32,7 +32,7 @@ const mockCases: Case[] = [
   {
     id: 4,
     year: 2023,
-    casename: "Udvidelse af skoledistrikt Nord",
+    casename: "4Udvidelse af skoledistrikt Nord",
     link: "https://eksempel.dk/sag/4",
     votes: "For: 14, Imod: 1, Blanke: 0",
     attendance: "85%"
