@@ -12,7 +12,7 @@ pipeline {
                 
                 dir('/var/jenkins_home/projects/infrastructure') {
                    sh 'docker compose --version'    
-                   sh 'docker compose up -d --build --remove-orphans'
+                   sh 'docker compose up -d --build'
                    sh 'docker image prune -f'
                 }
             }
