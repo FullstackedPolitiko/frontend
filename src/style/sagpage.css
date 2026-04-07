@@ -1,12 +1,25 @@
 .sag-page {
-  max-width: 720px;
-  margin: 0 auto;
-  padding: 2rem 1rem;
+  width: 100%;
+  max-width: 100%;
+  padding: 2rem 3rem;
+  box-sizing: border-box;
 }
 
 .sag-page-heading {
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   font-weight: 700;
   color: #1a1a1a;
+  margin: 0 0 0.25rem;
+}
+
+.sag-page-count {
+  font-size: 0.88rem;
+  color: #888;
   margin: 0 0 1.5rem;
+}
+
+.sag-page-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
 }

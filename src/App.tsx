@@ -3,6 +3,7 @@ import './App.css'
 import Sidebar from './component/Sidebar'
 import Timeline from './component/Timeline'
 import SagPage from './component/SagPage'
+import SearchPage from './component/SearchPage'
 import type { Case } from './model/Case';
 
 function App() {
@@ -51,6 +52,7 @@ function App() {
           <Timeline startyear={1998} endyear={2026} cases={mockCases} />
         )}
         {activePage === "sag" && <SagPage />}
+        {activePage === "search" && <SearchPage />}
       </main>
     </div>
   )
