@@ -1,0 +1,141 @@
+.sag-card {
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 1.5rem;
+  max-width: 640px;
+  font-family: inherit;
+}
+
+.sag-card-header {
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #eee;
+}
+
+.sag-card-title-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.sag-nummer {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #555;
+  background: #f0f0f0;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+}
+
+.sag-status {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.2rem 0.6rem;
+  border-radius: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.status-active {
+  background: #dff6dd;
+  color: #1a7a1a;
+}
+
+.status-closed {
+  background: #e8e8e8;
+  color: #555;
+}
+
+.status-postponed {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.status-unknown {
+  background: #f0f0f0;
+  color: #777;
+}
+
+.sag-titel {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 0;
+  color: #1a1a1a;
+  line-height: 1.4;
+}
+
+.sag-titelkort {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 0.25rem 0 0;
+}
+
+.sag-card-section h3 {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #888;
+  margin: 0 0 0.4rem;
+}
+
+.sag-resume {
+  font-size: 0.95rem;
+  color: #333;
+  line-height: 1.6;
+  margin: 0 0 1rem;
+}
+
+.sag-card-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.sag-detail-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 0.35rem 0;
+  border-bottom: 1px solid #f5f5f5;
+}
+
+.sag-label {
+  font-size: 0.85rem;
+  color: #777;
+  flex-shrink: 0;
+  margin-right: 1rem;
+}
+
+.sag-value {
+  font-size: 0.9rem;
+  color: #222;
+  text-align: right;
+  font-weight: 500;
+}
+
+.sag-budget-tag {
+  background: #e8f0fe;
+  color: #1a56db;
+  padding: 0.1rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+}
+
+.sag-card-footer {
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px solid #eee;
+}
+
+.sag-link {
+  font-size: 0.9rem;
+  color: #1a56db;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.sag-link:hover {
+  text-decoration: underline;
+}
