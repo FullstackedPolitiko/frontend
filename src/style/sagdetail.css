@@ -3,22 +3,6 @@
   padding: 2rem 3rem;
 }
 
-.sag-detail-back {
-  background: none;
-  border: none;
-  color: #4a6cf7;
-  font-size: 0.9rem;
-  cursor: pointer;
-  padding: 0;
-  margin-bottom: 1.5rem;
-  font-weight: 500;
-  transition: color 0.15s;
-}
-
-.sag-detail-back:hover {
-  color: #3350c7;
-}
-
 /* Header */
 .sag-detail-header {
   margin-bottom: 2rem;
@@ -26,11 +10,48 @@
   border-bottom: 1px solid #eee;
 }
 
-.sag-detail-title-row {
+.sag-detail-header-row {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  margin-bottom: 0.6rem;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.4rem;
+}
+
+.sag-detail-back {
+  background: none;
+  border: none;
+  color: #4a6cf7;
+  font-size: 0.9rem;
+  cursor: pointer;
+  padding: 0;
+  font-weight: 500;
+  transition: color 0.15s;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.sag-detail-back:hover {
+  color: #3350c7;
+}
+
+.sag-detail-titel {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0;
+  line-height: 1.35;
+  text-align: center;
+  flex: 1;
+  min-width: 0;
+}
+
+.sag-detail-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+  white-space: nowrap;
 }
 
 .sag-detail-nummer {
@@ -71,18 +92,11 @@
   color: #777;
 }
 
-.sag-detail-titel {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #1a1a1a;
-  margin: 0;
-  line-height: 1.35;
-}
-
 .sag-detail-titelkort {
   font-size: 0.95rem;
   color: #666;
   margin: 0.3rem 0 0;
+  text-align: center;
 }
 
 /* Sections */

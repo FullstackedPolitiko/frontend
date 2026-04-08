@@ -3,11 +3,31 @@ import './App.css'
 import Sidebar from './component/Sidebar'
 import Timeline from './component/Timeline'
 import SagPage from './component/SagPage'
+import SagDetail from './component/SagDetail'
 import SearchPage from './component/SearchPage'
+import type { Sag } from './component/SagCard'
 import type { Case } from './model/Case';
 
 function App() {
   const [activePage, setActivePage] = useState("timeline");
+  const [selectedSag, setSelectedSag] = useState<Sag | null>(null);
+  const [previousPage, setPreviousPage] = useState<string>("search");
+
+  const handleNavigate = (page: string) => {
+    setActivePage(page);
+    setSelectedSag(null);
+  };
+
+  const handleSagSelected = (sag: Sag, fromPage: string) => {
+    setSelectedSag(sag);
+    setPreviousPage(fromPage);
+    setActivePage("sagdetail");
+  };
+
+  const handleBackFromDetail = () => {
+    setSelectedSag(null);
+    setActivePage(previousPage);
+  };
 
   const mockCases: Case[] = [
     {
@@ -46,13 +66,20 @@ function App() {
 
   return (
     <div className="app-layout">
-      <Sidebar activePage={activePage} onNavigate={setActivePage} />
+      <Sidebar activePage={activePage} onNavigate={handleNavigate} />
       <main className="app-content">
         {activePage === "timeline" && (
           <Timeline startyear={1998} endyear={2026} cases={mockCases} />
         )}
-        {activePage === "sag" && <SagPage />}
-        {activePage === "search" && <SearchPage />}
+        {activePage === "sag" && (
+          <SagPage onSagSelected={(sag) => handleSagSelected(sag, "sag")} />
+        )}
+        {activePage === "search" && (
+          <SearchPage onSagSelected={(sag) => handleSagSelected(sag, "search")} />
+        )}
+        {activePage === "sagdetail" && selectedSag && (
+          <SagDetail sag={selectedSag} onBack={handleBackFromDetail} />
+        )}
       </main>
     </div>
   )

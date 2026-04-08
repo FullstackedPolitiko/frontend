@@ -1,8 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import SagCard from "../component/SagCard";
-import SagDetail from "../component/SagDetail";
 import type { Sag } from "../component/SagCard";
 import "../style/sagpage.css";
+
+interface SagPageProps {
+  onSagSelected: (sag: Sag) => void;
+}
 
 // TODO: Replace with actual API data
 const mockSager: Sag[] = [
@@ -163,13 +166,7 @@ const mockSager: Sag[] = [
   },
 ];
 
-const SagPage: React.FC = () => {
-  const [selectedSag, setSelectedSag] = useState<Sag | null>(null);
-
-  if (selectedSag) {
-    return <SagDetail sag={selectedSag} onBack={() => setSelectedSag(null)} />;
-  }
-
+const SagPage: React.FC<SagPageProps> = ({ onSagSelected }) => {
   return (
     <div className="sag-page">
       <h1 className="sag-page-heading">Sager</h1>
@@ -179,7 +176,7 @@ const SagPage: React.FC = () => {
           <SagCard
             key={sag.id}
             sag={sag}
-            onClick={() => setSelectedSag(sag)}
+            onClick={() => onSagSelected(sag)}
           />
         ))}
       </div>

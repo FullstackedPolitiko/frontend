@@ -37,18 +37,22 @@ const StatusBadge: React.FC<{ statusid: number }> = ({ statusid }) => {
 const SagDetail: React.FC<SagDetailProps> = ({ sag, onBack }) => {
   return (
     <div className="sag-detail">
-      <button className="sag-detail-back" onClick={onBack}>
-        ← Tilbage til oversigt
-      </button>
-
       <div className="sag-detail-header">
-        <div className="sag-detail-title-row">
-          <span className="sag-detail-nummer">
-            {sag.nummerprefix}{sag.nummernumerisk}{sag.nummerpostfix}
-          </span>
-          <StatusBadge statusid={sag.statusid} />
+        <div className="sag-detail-header-row">
+          <button className="sag-detail-back" onClick={onBack}>
+            ← Tilbage til oversigt
+          </button>
+
+          <h1 className="sag-detail-titel">{sag.titel}</h1>
+
+          <div className="sag-detail-meta">
+            <span className="sag-detail-nummer">
+              {sag.nummerprefix}{sag.nummernumerisk}{sag.nummerpostfix}
+            </span>
+            <StatusBadge statusid={sag.statusid} />
+          </div>
         </div>
-        <h1 className="sag-detail-titel">{sag.titel}</h1>
+
         {sag.titelkort && sag.titelkort !== sag.titel && (
           <p className="sag-detail-titelkort">{sag.titelkort}</p>
         )}
