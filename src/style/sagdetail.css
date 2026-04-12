@@ -1,0 +1,168 @@
+.sag-detail {
+  max-width: 100%;
+  padding: 2rem 3rem;
+}
+
+/* Header */
+.sag-detail-header {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #eee;
+}
+
+.sag-detail-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.4rem;
+}
+
+.sag-detail-back {
+  background: none;
+  border: none;
+  color: #4a6cf7;
+  font-size: 0.9rem;
+  cursor: pointer;
+  padding: 0;
+  font-weight: 500;
+  transition: color 0.15s;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.sag-detail-back:hover {
+  color: #3350c7;
+}
+
+.sag-detail-titel {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0;
+  line-height: 1.35;
+  text-align: center;
+  flex: 1;
+  min-width: 0;
+}
+
+.sag-detail-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.sag-detail-nummer {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #555;
+  background: #f0f0f0;
+  padding: 0.2rem 0.55rem;
+  border-radius: 4px;
+}
+
+.detail-status {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.2rem 0.6rem;
+  border-radius: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.detail-status-active {
+  background: #dff6dd;
+  color: #1a7a1a;
+}
+
+.detail-status-closed {
+  background: #e8e8e8;
+  color: #555;
+}
+
+.detail-status-postponed {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.detail-status-unknown {
+  background: #f0f0f0;
+  color: #777;
+}
+
+.sag-detail-titelkort {
+  font-size: 0.95rem;
+  color: #666;
+  margin: 0.3rem 0 0;
+  text-align: center;
+}
+
+/* Sections */
+.sag-detail-section {
+  margin-bottom: 1.75rem;
+}
+
+.sag-detail-section h2 {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #888;
+  margin: 0 0 0.6rem;
+}
+
+.sag-detail-section p {
+  font-size: 0.95rem;
+  color: #333;
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* Detail grid */
+.sag-detail-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.sag-detail-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 0.45rem 0;
+  border-bottom: 1px solid #f3f3f3;
+}
+
+.sag-detail-label {
+  font-size: 0.88rem;
+  color: #777;
+  flex-shrink: 0;
+  margin-right: 1.5rem;
+}
+
+.sag-detail-value {
+  font-size: 0.92rem;
+  color: #222;
+  text-align: right;
+  font-weight: 500;
+}
+
+.sag-detail-budget {
+  background: #e8f0fe;
+  color: #1a56db;
+  padding: 0.1rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.82rem;
+}
+
+.sag-detail-link {
+  font-size: 0.95rem;
+  color: #4a6cf7;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.sag-detail-link:hover {
+  text-decoration: underline;
+}

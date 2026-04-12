@@ -1,0 +1,88 @@
+.sag-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  padding: 1.25rem 1.75rem;
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.15s, border-color 0.15s, box-shadow 0.15s;
+  box-sizing: border-box;
+}
+
+.sag-card:hover {
+  background: #f7f8fc;
+  border-color: #ccd;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+}
+
+.sag-card-top {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.4rem;
+  width: 100%;
+}
+
+.sag-nummer {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #555;
+  background: #f0f0f0;
+  padding: 0.1rem 0.45rem;
+  border-radius: 4px;
+}
+
+.sag-status {
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 0.15rem 0.5rem;
+  border-radius: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.status-active {
+  background: #dff6dd;
+  color: #1a7a1a;
+}
+
+.status-closed {
+  background: #e8e8e8;
+  color: #555;
+}
+
+.status-postponed {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.status-unknown {
+  background: #f0f0f0;
+  color: #777;
+}
+
+.sag-titel {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.sag-titelkort {
+  font-size: 0.85rem;
+  color: #777;
+  margin: 0.15rem 0 0;
+}
+
+.sag-card-meta {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  color: #888;
+}
