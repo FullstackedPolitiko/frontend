@@ -4,6 +4,7 @@ import { useAuth } from './authContext';
 
 export default function LoginButton() {
     const { login } = useAuth();
+    console.log('CLIENT_ID:', import.meta.env.VITE_GOOGLE_CLIENT_ID);
 
     const handleSuccess = async (cred: CredentialResponse) => {
         if (!cred.credential) return;

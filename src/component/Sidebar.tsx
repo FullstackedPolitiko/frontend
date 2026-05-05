@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../style/sidebar.css";
+import AuthSection from '../auth/UserSection';
 
 interface SidebarProps {
   activePage: string;
@@ -60,6 +61,11 @@ const Sidebar: React.FC<SidebarProps> = ({ activePage, onNavigate }) => {
           </li>
         ))}
       </ul>
+        {!collapsed && (
+            <div className="sidebar-footer">
+                <AuthSection />
+            </div>
+        )}
     </nav>
   );
 };
