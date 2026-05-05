@@ -22,3 +22,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+#Secrets - skal nok laves på en anden måde
+.env.development
+.env.production
