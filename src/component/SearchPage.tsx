@@ -223,11 +223,11 @@ const SearchPage: React.FC<SearchPageProps> = ({ onResultClick, onSagSelected })
 
   // Reactively search as the user types or changes filter
   useEffect(() => {
-    if (!query.trim() && !activeFilter) {
+    /*if (!query.trim() && !activeFilter) {
       setResults([]);
       setHasSearched(false);
       return;
-    }
+    }*/
     const timer = setTimeout(() => {
       setHasSearched(true);
       const all = mockFullSearch(query);
