@@ -1,12 +1,12 @@
 import { createContext, useContext, useState, type ReactNode } from 'react';
 import { googleLogout } from '@react-oauth/google';
-import type {User} from "./User.ts";
-import {clearAuth, getStoredUser, storeAuth} from "./authConsole.ts";
-
+import type { User } from './User';
+import { getStoredUser, storeAuth, clearAuth } from './authConsole';
 
 interface AuthContextValue {
     user: User | null;
-    login: (token: string, user: User) => void;
+    isLoggedIn: boolean;
+    login: (googleIdToken: string, user: User) => void;
     logout: () => void;
 }
 
@@ -15,8 +15,8 @@ const AuthContext = createContext<AuthContextValue | undefined>(undefined);
 export function AuthProvider({ children }: { children: ReactNode }) {
     const [user, setUser] = useState<User | null>(getStoredUser());
 
-    const login = (token: string, u: User) => {
-        storeAuth(token, u);
+    const login = (googleIdToken: string, u: User) => {
+        storeAuth(googleIdToken, u);
         setUser(u);
     };
 
@@ -27,10 +27,10 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     };
 
     return (
-        <AuthContext.Provider value={{ user, login, logout }}>
-    {children}
-    </AuthContext.Provider>
-);
+        <AuthContext.Provider value={{ user, isLoggedIn: user !== null, login, logout }}>
+            {children}
+        </AuthContext.Provider>
+    );
 }
 
 export function useAuth(): AuthContextValue {
