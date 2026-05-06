@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../style/sidebar.css";
-import AuthSection from '../auth/UserSection';
+import UserSection from "../auth/UserSection";
 
 interface SidebarProps {
   activePage: string;
@@ -32,42 +32,42 @@ const SearchIcon = () => (
 const Sidebar: React.FC<SidebarProps> = ({ activePage, onNavigate }) => {
   const [collapsed, setCollapsed] = useState(false);
 
-  return (
-    <nav className={`sidebar ${collapsed ? "sidebar-collapsed" : ""}`}>
-      <div className="sidebar-header">
-        {!collapsed && <span className="sidebar-logo">Politiko</span>}
-        <button
-          className="sidebar-toggle"
-          onClick={() => setCollapsed(!collapsed)}
-          aria-label={collapsed ? "Udvid menu" : "Skjul menu"}
-        >
-          {collapsed ? "▶" : "◀"}
-        </button>
-      </div>
-
-      <ul className="sidebar-menu">
-        {menuItems.map((item) => (
-          <li key={item.id}>
-            <button
-              className={`sidebar-item ${activePage === item.id ? "sidebar-item-active" : ""}`}
-              onClick={() => onNavigate(item.id)}
-              title={item.label}
-            >
-              <span className="sidebar-icon">
-                {item.icon === "search" ? <SearchIcon /> : item.icon}
-              </span>
-              {!collapsed && <span className="sidebar-label">{item.label}</span>}
-            </button>
-          </li>
-        ))}
-      </ul>
-        {!collapsed && (
-            <div className="sidebar-footer">
-                <AuthSection />
+    return (
+        <nav className={`sidebar ${collapsed ? "sidebar-collapsed" : ""}`}>
+            <div className="sidebar-header">
+                {!collapsed && <span className="sidebar-logo">Politiko</span>}
+                <button
+                    className="sidebar-toggle"
+                    onClick={() => setCollapsed(!collapsed)}
+                    aria-label={collapsed ? "Udvid menu" : "Skjul menu"}
+                >
+                    {collapsed ? "▶" : "◀"}
+                </button>
             </div>
-        )}
-    </nav>
-  );
+
+            <ul className="sidebar-menu">
+                {menuItems.map((item) => (
+                    <li key={item.id}>
+                        <button
+                            className={`sidebar-item ${activePage === item.id ? "sidebar-item-active" : ""}`}
+                            onClick={() => onNavigate(item.id)}
+                            title={item.label}
+                        >
+              <span className="sidebar-icon">
+                {item.icon === "search" ? <SearchIcon/> : item.icon}
+              </span>
+                            {!collapsed && <span className="sidebar-label">{item.label}</span>}
+                        </button>
+                    </li>
+                ))}
+            </ul>
+            {!collapsed && (
+                <div className="sidebar-footer">
+                    <UserSection/>
+                </div>
+            )}
+        </nav>
+    );
 };
 
 export default Sidebar;
