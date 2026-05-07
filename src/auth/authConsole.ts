@@ -1,20 +1,19 @@
-import type {LoginResponse} from "./LoginResponse.ts";
-import type {User} from "./User.ts";
+import type { User } from './User.ts';
 
 const API_URL = import.meta.env.VITE_API_URL;
 
-export async function loginWithGoogle(idToken: string): Promise<LoginResponse> {
-    const res = await fetch(`${API_URL}/api/auth/google`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ idToken }),
+export async function fetchOrCreateUser(googleIdToken: string): Promise<User> {
+    const res = await fetch(`${API_URL}/api/users/login`, {
+        headers: {
+            Authorization: `Bearer ${googleIdToken}`,
+        },
     });
     if (!res.ok) throw new Error(`Login failed: ${res.status}`);
     return res.json();
 }
 
 export function getStoredToken(): string | null {
-    return localStorage.getItem('jwt');
+    return localStorage.getItem('googleIdToken');
 }
 
 export function getStoredUser(): User | null {
@@ -22,13 +21,13 @@ export function getStoredUser(): User | null {
     return u ? (JSON.parse(u) as User) : null;
 }
 
-export function storeAuth(token: string, user: User): void {
-    localStorage.setItem('jwt', token);
+export function storeAuth(googleIdToken: string, user: User): void {
+    localStorage.setItem('googleIdToken', googleIdToken);
     localStorage.setItem('user', JSON.stringify(user));
 }
 
 export function clearAuth(): void {
-    localStorage.removeItem('jwt');
+    localStorage.removeItem('googleIdToken');
     localStorage.removeItem('user');
 }
 
@@ -42,4 +41,8 @@ export async function authedFetch(path: string, options: RequestInit = {}): Prom
             ...(token ? { Authorization: `Bearer ${token}` } : {}),
         },
     });
+}
+
+export async function maybeAuthedFetch(path: string, options: RequestInit = {}): Promise<Response> {
+    return authedFetch(path, options);
 }

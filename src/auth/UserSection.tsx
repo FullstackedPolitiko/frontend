@@ -1,8 +1,8 @@
 import { useAuth } from './authContext';
 import LoginButton from './LoginButton';
-import UserMenu from './ProfileMenu';
+import UserMenu from './UserMenu.tsx';
 
-export default function AuthSection() {
+export default function UserSection() {
     const { user } = useAuth();
     return user ? <UserMenu /> : <LoginButton />;
 }
