@@ -1,6 +1,6 @@
 import type { User } from './User.ts';
 
-const API_URL = import.meta.env.VITE_API_URL;
+const API_URL = import.meta.env.VITE_API_BASE_URL; 
 
 export async function fetchOrCreateUser(googleIdToken: string): Promise<User> {
     const res = await fetch(`${API_URL}/api/users/login`, {
