@@ -35,7 +35,7 @@ const Sidebar: React.FC<SidebarProps> = ({ activePage, onNavigate }) => {
     return (
         <nav className={`sidebar ${collapsed ? "sidebar-collapsed" : ""}`}>
             <div className="sidebar-header">
-                {!collapsed && <span className="sidebar-logo">Politisk Indsigt</span>}
+                {!collapsed && <span className="sidebar-logo">Politisk Indblik</span>}
                 <button
                     className="sidebar-toggle"
                     onClick={() => setCollapsed(!collapsed)}

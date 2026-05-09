@@ -1,39 +1,43 @@
 :root {
-  --attachscale: 1; 
-  --boxScale:1;
+    --attachscale: 0.6;
+    --boxScale: 1;
 }
 
-.box{
- display: inline-flex;
- flex-direction: column;
- align-items: center;
+.box {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;              /* fill the yearrow column */
 }
 
-.outer-box{
+.outer-box {
     z-index: 1000;
     display: flex;
     background-color: rgb(255, 255, 255);
-    width: calc(220px * var(--boxScale));
-    height: calc(250px * var(--boxScale));
+    width: 100%;              /* was: fixed 220px */
+    max-width: calc(220px * var(--boxScale));
+    aspect-ratio: 220 / 200;  /* was: fixed 250px height */
     border-radius: 15px;
     align-items: center;
     justify-content: center;
     border: calc(2px * var(--boxScale)) solid rgb(207, 197, 197);
     box-shadow: 5px 5px 8px grey;
+    box-sizing: border-box;
 }
 
-.inner-box{
+.inner-box {
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: rgb(255, 255, 255);
-    width: calc(190px * var(--boxScale));
-    height: calc(220px * var(--boxScale));
+    width: calc(100% - 30px);
+    height: calc(100% - 30px);
     border-radius: 15px;
-    border: calc(7px * var(--boxScale)) solid rgb(79, 146, 233);
+    border: calc(5px * var(--boxScale)) solid rgb(79, 146, 233);
+    box-sizing: border-box;
+    overflow: hidden;
 }
 
-/* BoxAttach */
 .box-attach {
   display: flex;  
   width: calc(180px * var(--attachscale)); 

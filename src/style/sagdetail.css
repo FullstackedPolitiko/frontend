@@ -3,7 +3,6 @@
   padding: 2rem 3rem;
 }
 
-/* Header */
 .sag-detail-header {
   margin-bottom: 2rem;
   padding-bottom: 1.5rem;
@@ -99,7 +98,6 @@
   text-align: center;
 }
 
-/* Sections */
 .sag-detail-section {
   margin-bottom: 1.75rem;
 }
@@ -119,7 +117,6 @@
   margin: 0;
 }
 
-/* Detail grid */
 .sag-detail-grid {
   display: flex;
   flex-direction: column;

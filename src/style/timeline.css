@@ -56,9 +56,47 @@
         margin-left: -18px;
     }
 
-    .yearinput-box{
+    .yearinput-box {
         width: 80px;
         height: 80px;
     }
 
+    .timeline {
+        display: flex;
+        flex-direction: row;
+        gap: 0.5rem;
+        flex: 1;
+        min-height: 0;
+        width: 100%;
+    }
+
+    .yearrow {
+        display: flex;
+        flex-direction: var(--yearrowDisplayOrientation);
+        align-items: center;
+        flex: 1; /* equal-width columns */
+        min-width: 0; /* allow shrinking below content */
+    }
+
+    .box-rows {
+        width: 100%;
+        margin-top: -5px;
+    }
+}
+
+.timeline-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 15px;
+}
+
+.timeline-controls {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: calc(1rem + 5px);
+    flex-shrink: 0;
 }

@@ -33,30 +33,22 @@ function Timeline({ startyear, endyear, cases }: props) {
     })
 
     return (
-        <div style={{ display: "flex" }}>
-
-            <div>
-                <div className="timeline">
-                    {visibleYears.map((year) => (
-                        <YearRow key={year} year={year.toString()} cases={visibleCases} /> //TODO: filter for cases mathing year
-                    ))}
-                </div>
-
-                <br />
-
-                <div>
-                    {hasMore ?
-                        <button className="button" onClick={() => handleLoadMore()}>
-                            <DownOutlined />
-                        </button> : null
-                    }
-                </div>
+        <div className="timeline-wrapper">
+            <div className="timeline">
+                {visibleYears.map((year) => (
+                    <YearRow key={year} year={year.toString()} cases={visibleCases} />
+                ))}
             </div>
 
-            <div style={{ display: "flex", width: "fit-content", height: "fit-content", justifyContent: "center" }}>
+            <div className="timeline-controls">
                 <button className="button" onClick={back}>
                     <LeftOutlined />
                 </button>
+                {hasMore ?
+                    <button className="button" onClick={() => handleLoadMore()}>
+                        <DownOutlined />
+                    </button> : null
+                }
                 <button className="button" onClick={next}>
                     <RightOutlined />
                 </button>
