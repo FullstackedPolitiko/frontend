@@ -40,7 +40,7 @@ const SagDetail: React.FC<SagDetailProps> = ({ sag, onBack }) => {
       <div className="sag-detail-header">
         <div className="sag-detail-header-row">
           <button className="sag-detail-back" onClick={onBack}>
-            ← Tilbage til oversigt
+            ← Tilbage
           </button>
 
           <h1 className="sag-detail-titel">{sag.titel}</h1>

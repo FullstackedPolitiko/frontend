@@ -5,18 +5,14 @@ import type { Case } from "../model/Case";
 import usePagination from "../hooks/usePagination";
 import { useLoadmore } from "../hooks/useLoadmore";
 
-{/* ---------------------------------------------------------------------
-    Component: Timeline
-    Purpose: It displays the given objekt of cases on a timeline that goes from the given start-year to end-year
-    --------------------------------------------------------------------- */}
-
 interface props {
     startyear: number;
     endyear: number;
-    cases: Case[] //TODO: make into a map with year as key
+    cases: Case[];
+    onCaseSelected: (caseId: string | number) => void;
 }
 
-function Timeline({ startyear, endyear, cases }: props) {
+function Timeline({ startyear, endyear, cases, onCaseSelected }: props) {
     const years = [];
     for (let i = startyear; i <= endyear; i++) {
         years.push(i);
@@ -25,18 +21,23 @@ function Timeline({ startyear, endyear, cases }: props) {
     const { visibleCases, handleLoadMore, hasMore } = useLoadmore({
         cases: cases,
         initialCount: 2
-    })
+    });
 
     const { visibleYears, next, back } = usePagination({
         items: years,
         itemsToShow: 6
-    })
+    });
 
     return (
         <div className="timeline-wrapper">
             <div className="timeline">
                 {visibleYears.map((year) => (
-                    <YearRow key={year} year={year.toString()} cases={visibleCases} />
+                    <YearRow
+                        key={year}
+                        year={year.toString()}
+                        cases={visibleCases}
+                        onCaseSelected={onCaseSelected}
+                    />
                 ))}
             </div>
 
@@ -44,11 +45,11 @@ function Timeline({ startyear, endyear, cases }: props) {
                 <button className="button" onClick={back}>
                     <LeftOutlined />
                 </button>
-                {hasMore ?
+                {hasMore ? (
                     <button className="button" onClick={() => handleLoadMore()}>
                         <DownOutlined />
-                    </button> : null
-                }
+                    </button>
+                ) : null}
                 <button className="button" onClick={next}>
                     <RightOutlined />
                 </button>
@@ -57,4 +58,4 @@ function Timeline({ startyear, endyear, cases }: props) {
     );
 }
 
-export default Timeline
+export default Timeline;

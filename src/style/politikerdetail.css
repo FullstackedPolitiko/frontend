@@ -1,0 +1,122 @@
+.politiker-detail {
+    padding: 24px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.politiker-detail-header {
+    margin-bottom: 24px;
+}
+
+.politiker-detail-header-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 8px;
+}
+
+.politiker-detail-back {
+    background: none;
+    border: 1px solid #ccc;
+    color: #213547;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.politiker-detail-back:hover {
+    background: #f4f4f4;
+}
+
+.politiker-detail-navn {
+    flex: 1;
+    margin: 0;
+    color: #213547;
+}
+
+.politiker-detail-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.politiker-detail-parti {
+    font-weight: 600;
+    color: #4a4a8e;
+    background: #eef;
+    padding: 4px 10px;
+    border-radius: 4px;
+}
+
+.politiker-detail-id {
+    color: #888;
+    font-size: 0.85rem;
+}
+
+.politiker-detail-parti-fullname {
+    margin: 0;
+    color: #555;
+    font-style: italic;
+}
+
+.politiker-detail-section {
+    margin-bottom: 24px;
+    padding: 16px;
+    background: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+}
+
+.politiker-detail-section h2 {
+    margin: 0 0 12px 0;
+    font-size: 1.2rem;
+    color: #213547;
+}
+
+.politiker-detail-section p {
+    margin: 0;
+    line-height: 1.5;
+    color: #333;
+}
+
+.politiker-detail-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.politiker-detail-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.politiker-detail-row:last-child {
+    border-bottom: none;
+}
+
+.politiker-detail-label {
+    color: #888;
+    font-size: 0.9rem;
+}
+
+.politiker-detail-value {
+    color: #213547;
+    font-weight: 500;
+}
+
+.politiker-detail-mock-note {
+    font-size: 0.8rem;
+    color: #888;
+    margin-bottom: 12px !important;
+    font-style: italic;
+}
+
+.politiker-detail-sager {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}

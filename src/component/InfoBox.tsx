@@ -2,13 +2,9 @@ import type { Case } from "../model/Case";
 import "../style/infobox.css"
 import { Space, Typography } from 'antd';
 
-{/* ---------------------------------------------------------------------
-    Component: InfoBox
-    Purpose: Takes info about a case and displays it
-    --------------------------------------------------------------------- */}
-
 interface props {
-    caseItem:Case
+    caseItem: Case;
+    onCaseSelected: (caseId: string | number) => void;
 }
 
 function BoxAttach() {
@@ -20,19 +16,25 @@ function BoxAttach() {
     )
 }
 
-function InfoBox({caseItem}:props) {
+function InfoBox({ caseItem, onCaseSelected }: props) {
     const { Text, Link } = Typography;
+
+    const handleReferenceClick = () => {
+        if (caseItem.id !== undefined) {
+            onCaseSelected(caseItem.id);
+        }
+    };
 
     return (
         <div className="box">
-            <BoxAttach></BoxAttach>
+            <BoxAttach />
             <div className="outer-box">
                 <div className="inner-box">
-                    <Space vertical>
+                    <Space direction="vertical">
                         <Text type="success">{caseItem.casename}</Text>
                         <Text type="success">{caseItem.votes}</Text>
                         <Text type="success">{caseItem.attendance}</Text>
-                        <Link href={caseItem.link}>reference</Link>
+                        <Link onClick={handleReferenceClick} style={{ cursor: 'pointer' }}>reference</Link>
                     </Space>
                 </div>
             </div>

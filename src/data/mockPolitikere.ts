@@ -1,0 +1,26 @@
+import type { Politician } from "../api/politicianApi";
+
+export const mockPolitikere: Politician[] = [
+    { id: 1, fornavn: "Mette", efternavn: "Frederiksen", navn: "Mette Frederiksen", gruppenavnkort: "S", biografi: "Statsminister og formand for Socialdemokratiet siden 2015. Født 1977 i Aalborg." },
+    { id: 2, fornavn: "Magnus", efternavn: "Heunicke", navn: "Magnus Heunicke", gruppenavnkort: "S", biografi: "Miljøminister. Tidligere sundhedsminister under COVID-19." },
+    { id: 3, fornavn: "Nicolai", efternavn: "Wammen", navn: "Nicolai Wammen", gruppenavnkort: "S", biografi: "Finansminister. Tidligere borgmester i Aarhus." },
+    { id: 4, fornavn: "Troels", efternavn: "Lund Poulsen", navn: "Troels Lund Poulsen", gruppenavnkort: "V", biografi: "Forsvarsminister og formand for Venstre. Vicestatsminister." },
+    { id: 5, fornavn: "Jakob", efternavn: "Ellemann-Jensen", navn: "Jakob Ellemann-Jensen", gruppenavnkort: "V", biografi: "Tidligere formand for Venstre og vicestatsminister." },
+    { id: 6, fornavn: "Lars", efternavn: "Løkke Rasmussen", navn: "Lars Løkke Rasmussen", gruppenavnkort: "M", biografi: "Udenrigsminister og formand for Moderaterne. Tidligere statsminister 2009–11 og 2015–19." },
+    { id: 7, fornavn: "Jakob", efternavn: "Engel-Schmidt", navn: "Jakob Engel-Schmidt", gruppenavnkort: "M", biografi: "Kulturminister i SVM-regeringen." },
+    { id: 8, fornavn: "Søren", efternavn: "Pape Poulsen", navn: "Søren Pape Poulsen", gruppenavnkort: "KF", biografi: "Tidligere formand for Det Konservative Folkeparti og justitsminister." },
+    { id: 9, fornavn: "Mona", efternavn: "Juul", navn: "Mona Juul", gruppenavnkort: "KF", biografi: "Politisk ordfører for Det Konservative Folkeparti." },
+    { id: 10, fornavn: "Pia", efternavn: "Olsen Dyhr", navn: "Pia Olsen Dyhr", gruppenavnkort: "SF", biografi: "Formand for Socialistisk Folkeparti siden 2014." },
+    { id: 11, fornavn: "Karsten", efternavn: "Hønge", navn: "Karsten Hønge", gruppenavnkort: "SF", biografi: "Folketingsmedlem for SF og fagligt aktiv." },
+    { id: 12, fornavn: "Pernille", efternavn: "Skipper", navn: "Pernille Skipper", gruppenavnkort: "EL", biografi: "Tidligere politisk ordfører for Enhedslisten." },
+    { id: 13, fornavn: "Mai", efternavn: "Villadsen", navn: "Mai Villadsen", gruppenavnkort: "EL", biografi: "Folketingsmedlem for Enhedslisten og fhv. politisk ordfører." },
+    { id: 14, fornavn: "Morten", efternavn: "Messerschmidt", navn: "Morten Messerschmidt", gruppenavnkort: "DF", biografi: "Formand for Dansk Folkeparti siden 2022." },
+    { id: 15, fornavn: "Peter", efternavn: "Skaarup", navn: "Peter Skaarup", gruppenavnkort: "DD", biografi: "Folketingsmedlem og tidligere DF-gruppeformand. Nu Danmarksdemokraterne." },
+    { id: 16, fornavn: "Inger", efternavn: "Støjberg", navn: "Inger Støjberg", gruppenavnkort: "DD", biografi: "Formand for Danmarksdemokraterne siden partiets stiftelse i 2022." },
+    { id: 17, fornavn: "Pernille", efternavn: "Vermund", navn: "Pernille Vermund", gruppenavnkort: "LA", biografi: "Folketingsmedlem og tidligere formand for Nye Borgerlige." },
+    { id: 18, fornavn: "Alex", efternavn: "Vanopslagh", navn: "Alex Vanopslagh", gruppenavnkort: "LA", biografi: "Formand for Liberal Alliance siden 2019." },
+    { id: 19, fornavn: "Martin", efternavn: "Lidegaard", navn: "Martin Lidegaard", gruppenavnkort: "RV", biografi: "Tidligere udenrigsminister og fhv. politisk leder af Radikale Venstre." },
+    { id: 20, fornavn: "Sofie", efternavn: "Carsten Nielsen", navn: "Sofie Carsten Nielsen", gruppenavnkort: "RV", biografi: "Tidligere politisk leder af Radikale Venstre." },
+    { id: 21, fornavn: "Franciska", efternavn: "Rosenkilde", navn: "Franciska Rosenkilde", gruppenavnkort: "ALT", biografi: "Politisk leder af Alternativet siden 2022." },
+    { id: 22, fornavn: "Torsten", efternavn: "Gejl", navn: "Torsten Gejl", gruppenavnkort: "ALT", biografi: "Folketingsmedlem for Alternativet." },
+];

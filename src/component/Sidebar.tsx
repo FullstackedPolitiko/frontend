@@ -8,9 +8,11 @@ interface SidebarProps {
 }
 
 const menuItems = [
-  { id: "search", label: "Søg", icon: "search" },
-  { id: "timeline", label: "Tidslinje", icon: "📅" },
-  { id: "sag", label: "Sag", icon: "📄" },
+    { id: "search", label: "Søg", icon: "search" },
+    { id: "timeline", label: "Tidslinje", icon: "📅" },
+    { id: "sag", label: "Sag", icon: "📄" },
+    { id: "politiker", label: "Politikere", icon: "👤" },
+    { id: "parti", label: "Partier", icon: "🏛️" },
 ];
 
 const SearchIcon = () => (

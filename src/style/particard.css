@@ -1,0 +1,51 @@
+.parti-card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 16px;
+    background: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: left;
+    transition: border-color 0.15s, box-shadow 0.15s;
+    font-family: inherit;
+}
+
+.parti-card:hover {
+    border-color: #4a4a8e;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.parti-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-size: 0.85rem;
+}
+
+.parti-shortname {
+    font-weight: 600;
+    color: #4a4a8e;
+    background: #eef;
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+.parti-mandates {
+    color: #888;
+    font-size: 0.8rem;
+}
+
+.parti-fullname {
+    margin: 0 0 6px 0;
+    font-size: 1.1rem;
+    color: #213547;
+}
+
+.parti-meta {
+    margin: 0;
+    color: #555;
+    font-size: 0.9rem;
+}
