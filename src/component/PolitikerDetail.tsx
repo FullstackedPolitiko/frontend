@@ -47,7 +47,6 @@ const PolitikerDetail: React.FC<PolitikerDetailProps> = ({ politician, onBack, o
 
                     <div className="politiker-detail-meta">
                         <span className="politiker-detail-parti">{politician.gruppenavnkort}</span>
-                        <span className="politiker-detail-id">ID {politician.id}</span>
                     </div>
                 </div>
 
@@ -76,10 +75,6 @@ const PolitikerDetail: React.FC<PolitikerDetailProps> = ({ politician, onBack, o
                         <span className="politiker-detail-label">Parti</span>
                         <span className="politiker-detail-value">{partyFullName}</span>
                     </div>
-                    <div className="politiker-detail-row">
-                        <span className="politiker-detail-label">Politiker-ID</span>
-                        <span className="politiker-detail-value">{politician.id}</span>
-                    </div>
                 </div>
             </div>
 
@@ -87,7 +82,6 @@ const PolitikerDetail: React.FC<PolitikerDetailProps> = ({ politician, onBack, o
                 <div className="politiker-detail-section">
                     <h2>Relaterede sager</h2>
                     <p className="politiker-detail-mock-note">
-                        Eksempel-sager (rigtigt link mellem politiker og sag kommer senere)
                     </p>
                     <div className="politiker-detail-sager">
                         {relatedSager.map((sag) => (
