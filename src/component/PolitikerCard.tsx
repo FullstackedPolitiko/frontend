@@ -12,7 +12,6 @@ const PolitikerCard: React.FC<PolitikerCardProps> = ({ politician, onClick }) =>
         <button className="politiker-card" onClick={onClick}>
             <div className="politiker-card-top">
                 <span className="politiker-parti">{politician.gruppenavnkort}</span>
-                <span className="politiker-id">ID {politician.id}</span>
             </div>
             <h3 className="politiker-navn">{politician.navn}</h3>
             {politician.biografi && (
