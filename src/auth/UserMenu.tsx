@@ -7,7 +7,7 @@ export default function UserMenu() {
     const displayName = user.name ?? user.email ?? 'User';
     const initials =
         displayName
-            .split(/[\s@]+/)        // split on spaces or '@' so emails work too
+            .split(/[\s@]+/)
             .map((n) => n[0] ?? '')
             .filter(Boolean)
             .join('')
